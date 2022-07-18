@@ -65,11 +65,11 @@ io.on('connection', (socket) => {
     console.log('socket connected'); 
 
    //Defincion de eventos de conexion de socket io
-//    socket.on('prueba', (data)=> {
-//        console.log('prueba desde socketio', data);
+    socket.on('prueba', (data)=> {
+        console.log('prueba desde socketio recibe servidor', data);
 
-//    //Envio de datos al Frontend
-//    socket.emit('respuesta', {nombre: 'Yesid'})
+  // Envio de datos al Frontend
+    socket.emit('respuesta', {nombre: 'Yesid'})
 
-//    })
+    })
 })
