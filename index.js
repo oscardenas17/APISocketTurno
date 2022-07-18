@@ -44,6 +44,32 @@ app.use('/api/reconocimiento', reconocimientoRoutes)
 //
 
 const PORT = process.env.PORT || 4001
-app.listen(PORT, () => {
+const servidor = app.listen(PORT, () => {
     console.log('server run 4000');
 }) 
+
+
+//socket.io
+import { Server } from 'socket.io';
+
+const io= new Server(servidor, {
+   pingTimeout: 60000,
+   cors: {
+       origin: process.env.FRONTEND_URL
+   }
+});
+
+// //abrir una conexion de socket io
+
+io.on('connection', (socket) => {
+    console.log('socket connected'); 
+
+   //Defincion de eventos de conexion de socket io
+//    socket.on('prueba', (data)=> {
+//        console.log('prueba desde socketio', data);
+
+//    //Envio de datos al Frontend
+//    socket.emit('respuesta', {nombre: 'Yesid'})
+
+//    })
+})
