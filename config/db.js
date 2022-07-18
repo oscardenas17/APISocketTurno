@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const conectarDB = async () => {
 
     try {
@@ -19,3 +18,5 @@ const conectarDB = async () => {
 
 
 }
+
+export default conectarDB
